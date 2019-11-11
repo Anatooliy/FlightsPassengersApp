@@ -1,10 +1,8 @@
 namespace FPApp.DAL.EF
 {
     using FPApp.DAL.Configuration;
-    using FPApp.DAL.Entities;
-    using System;
-    using System.Data.Entity;
-    using System.Linq;
+    using FPApp.DAL.Entities;    
+    using System.Data.Entity;    
 
     public class FPContext : DbContext
     {
@@ -14,8 +12,8 @@ namespace FPApp.DAL.EF
         }
 
         public FPContext()
-            : base()
-        {
+            : base("name=FPDBContext")
+        {            
         }
 
         public virtual DbSet<City> Cities { get; set; }

@@ -1,0 +1,33 @@
+﻿@model FPApp.Client.Models.FlightViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@String.Format("{0}-{1} ({2})", @Model.CityFrom, @Model.CityTo, @Model.FlightTime)</h2>
+<br>
+<table class="table">
+    <tr>
+        <th>Passenger Full Name</th>        
+        <th>Checked in</th>        
+    </tr>
+
+    @foreach (var passenger in Model.passengerInfos)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => passenger.FirstName) @Html.DisplayFor(modelItem => passenger.LastName)
+            </td>            
+            <td>
+                @Html.CheckBoxFor(
+                    modelItem => passenger.IsChecked, 
+                    new { @class = "js-checker", data_passId = passenger.Id, data_flightId = Model.Id }
+                )
+            </td>            
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

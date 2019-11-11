@@ -41,7 +41,7 @@ namespace FPApp.DAL.EF
             {
                 CityFrom = cityDnipro,
                 CityTo = cityKyiv,
-                FlightTime = new DateTime(2020, 11, 11, 7, 0, 0)
+                FlightTime = new DateTime(2019, 11, 11, 7, 0, 0)
             };
 
             Passenger passenger1 = new Passenger { FirstName = "Johnny", LastName = "Depp" };
